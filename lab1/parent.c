@@ -9,6 +9,7 @@ void write_string(int fd, char *s) {
 }
 
 int main() {
+    int status;
     char filename[256];
 
     write_string(STDOUT_FILENO, "Введите имя файла (max 255 символов): ");
@@ -78,7 +79,6 @@ int main() {
         }
 
         close(pipe_[0]);
-        int status;
         wait(&status);
     }
 
